@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --color-green: #42eb05;
+  --color-red: #ff4141;
+  --color-lime-500: #cef739;
+  --color-lime-800: #283300;
+
+  --color-neutral-900: #0a0a0a;
+  --color-neutral-700: #171719;
+  --color-neutral-600: #202022;
+  --color-neutral-500: #2e2e2e;
+  --color-neutral-400: #3d3d3d;
+  --color-neutral-300: #3d3d3d;
+  --color-neutral-200: #9d9d9d;
+  --color-neutral-100: #c6c6c6;
+  --color-neutral-50: #ffffff;
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-green: var(--color-green);
+  --color-red: var(--color-red);
+
+  --color-lime-500: var(--color-lime-500);
+  --color-lime-800: var(--color-lime-800);
+
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-50: var(--color-neutral-50);
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker {
+  width: max-content;
+  animation: ticker 360s linear infinite;
+}
