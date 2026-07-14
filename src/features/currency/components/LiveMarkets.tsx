@@ -15,7 +15,6 @@ export default function LiveMarkets() {
         setIsLoading(true);
         const currentRates = await fetchRates();
         setCurrencyRates(currentRates);
-        console.log(currentRates);
       } catch (error) {
         console.log(error);
       } finally {

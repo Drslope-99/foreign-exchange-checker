@@ -1,10 +1,6 @@
 import logo from "../../assets/images/logo.svg";
 import LiveMarkets from "../../features/currency/components/LiveMarkets";
 
-// type HeaderProps = {
-//   children: ReactNode;
-// };
-
 export default function Header() {
   return (
     <header className="bg-neutral-900 flex flex-col gap-2 justify-center items-center">

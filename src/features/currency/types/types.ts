@@ -13,3 +13,16 @@ export type ComparedRate = Rate & {
   percentageChange: number | null;
   direction: RateDirection;
 };
+
+export interface ApiCurrency {
+  iso_code: string;
+  iso_numeric: string;
+  name: string;
+  symbol: string;
+  start_date: string;
+  end_date: string;
+}
+
+export interface EnrichedCurrency extends ApiCurrency {
+  flag?: string;
+}
