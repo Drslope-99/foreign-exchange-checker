@@ -1,5 +1,5 @@
 import logo from "../../assets/images/logo.svg";
-import LiveMarkets from "../../features/currency/components/LiveMarkets";
+// import LiveMarkets from "../../features/currency/components/LiveMarkets";
 
 export default function Header() {
   return (
@@ -14,7 +14,7 @@ export default function Header() {
           55 CURRENCIES . EOD . ECB DATA
         </div>
       </nav>
-      <LiveMarkets />
+      {/* <LiveMarkets /> */}
     </header>
   );
 }

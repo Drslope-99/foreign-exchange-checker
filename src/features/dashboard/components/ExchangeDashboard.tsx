@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCurrencyConverter } from "../../../context/currencyContext";
-import StatsSummary from "./StatsSummary";
-import TimeFrameSelector from "./TimeFrameSelector";
+import CurrencyHistoryTab from "./CurrencyHistoryTab";
+import { fetchCurrencyTimeSeries } from "../services/currencyTimeSeries";
+import type { CurrencyTimeSeries, TimeFrame } from "../types/types";
 
 const TABS = ["history", "compare", "favourites", "logs"] as const;
 type Tab = (typeof TABS)[number];
@@ -15,7 +16,32 @@ const TAB_LABELS: Record<Tab, string> = {
 
 export default function ExchangeDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("history");
-  const { send } = useCurrencyConverter();
+  const { send, receive } = useCurrencyConverter();
+  const [timeframe, setTimeframe] = useState<TimeFrame>("1D");
+  const [chart, setChart] = useState<CurrencyTimeSeries | null>(null);
+
+  useEffect(() => {
+    if (!send.currency || !receive.currency) {
+      return;
+    }
+
+    async function load() {
+      try {
+        const data = await fetchCurrencyTimeSeries(
+          send.currency?.iso_code ?? "USD",
+          receive.currency?.iso_code ?? "EUR",
+          timeframe,
+        );
+
+        setChart(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    load();
+  }, [send.currency, receive.currency, timeframe]);
+
   return (
     <div className="p-3 mt-4">
       {/* Tab bar */}
@@ -38,7 +64,7 @@ export default function ExchangeDashboard() {
         ))}
       </div>
       // CurrencyStatsPanel.tsx (inside, below the tabs)
-      <div className="flex gap-2 justify-between items-center">
+      <div>
         {/* <StatsSummary
           open={openRate}
           last={lastRate}
@@ -46,8 +72,11 @@ export default function ExchangeDashboard() {
           percentChange={percentChange}
         />
         <TimeFrameSelector active={timeframe} onChange={setTimeframe} /> */}
-        <StatsSummary />
-        <TimeFrameSelector />
+        <CurrencyHistoryTab
+          timeframe={timeframe}
+          setTimeframe={setTimeframe}
+          stats={chart}
+        />
       </div>
     </div>
   );
