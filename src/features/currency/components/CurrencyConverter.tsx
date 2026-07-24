@@ -21,7 +21,7 @@ export default function CurrencyConverter() {
       onSubmit={(e) => e.preventDefault()}
       className="bg-neutral-700 rounded-2xl"
     >
-      <div className="p-4 flex flex-col sm:flex-row items-center gap-4 md:gap-6">
+      <div className="px-2 md:px-4 py-4 flex flex-col sm:flex-row items-center gap-4 md:gap-6">
         <CurrencyInputCard
           label="send"
           value={send.amount}

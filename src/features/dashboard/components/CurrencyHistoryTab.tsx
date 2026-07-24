@@ -27,8 +27,9 @@ export default function CurrencyHistoryTab({
 
     // Remove previous drawing
     svg.selectAll("*").remove();
-    const width = svgRef.current.clientWidth;
-    const height = svgRef.current.clientHeight;
+    // const width = svgRef.current.clientWidth;
+    // const height = svgRef.current.clientHeight;
+    const { width, height } = svgRef.current.getBoundingClientRect();
 
     const margin = {
       top: 20,
@@ -168,8 +169,12 @@ export default function CurrencyHistoryTab({
       {/* the currency graph goes here */}
       <article className="bg-neutral-700 border border-neutral-500 p-3 rounded-xl ">
         <p className="text-neutral-50">{stats?.pair}</p>
-        <div className="w-full h-80">
-          <svg className="w-full h-full" ref={svgRef}></svg>
+        <div className="w-full h-48 sm:h-64 h-80">
+          <svg
+            className="w-full h-full"
+            ref={svgRef}
+            preserveAspectRatio="xMidYMid meet"
+          ></svg>
         </div>
       </article>
     </section>

@@ -30,7 +30,7 @@ export default function LiveMarkets() {
 
   return (
     <section className="w-full flex">
-      <button className="inline-flex max-content bg-lime-500 py-2 px-3 uppercase text-sm items-center">
+      <button className="inline-flex max-content bg-lime-500 py-1 md:py-2 px-1 md:px-3 uppercase text-sm items-center">
         <Dot />
         live markets
       </button>
@@ -40,7 +40,7 @@ export default function LiveMarkets() {
           {currencyRates.map((rates) => (
             <li
               key={rates.quote}
-              className="text-white text-sm px-3 py-1 border-r border-neutral-300"
+              className="text-white text-sm px-3 py-1 md:py-2 border-r border-neutral-300"
             >
               <div className="flex gap-2 items-center">
                 <p className="font-thin">

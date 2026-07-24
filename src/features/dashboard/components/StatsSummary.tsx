@@ -7,7 +7,7 @@ interface StatsSummaryProps {
 
 export default function StatsSummary({ stats }: StatsSummaryProps) {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       <article className="flex flex-col gap-3 bg-neutral-700 border border-neutral-500 text-neutral-50 px-3 py-2 rounded-xl">
         <p className="uppercase text-sm text-neutral-200">open</p>
         <span>{stats?.open}</span>
