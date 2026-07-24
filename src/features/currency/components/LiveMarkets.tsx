@@ -24,6 +24,10 @@ export default function LiveMarkets() {
     fetchCurrentRates();
   }, []);
 
+  if (loading) {
+    return <p>loading...</p>;
+  }
+
   return (
     <section className="w-full flex">
       <button className="inline-flex max-content bg-lime-500 py-2 px-3 uppercase text-sm items-center">

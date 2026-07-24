@@ -1,8 +1,8 @@
-import type { Currency } from "../types/types";
+import type { ApiCurrency } from "../types/types";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-export async function getCurrencies(): Promise<Currency[]> {
+export async function getCurrencies(): Promise<ApiCurrency[]> {
   try {
     const response = await fetch(`${baseUrl}/currencies`);
 
@@ -12,7 +12,7 @@ export async function getCurrencies(): Promise<Currency[]> {
       );
     }
 
-    const data: Currency[] = await response.json();
+    const data: ApiCurrency[] = await response.json();
 
     return data;
   } catch (error) {
