@@ -169,7 +169,7 @@ export default function CurrencyHistoryTab({
       {/* the currency graph goes here */}
       <article className="bg-neutral-700 border border-neutral-500 p-3 rounded-xl ">
         <p className="text-neutral-50">{stats?.pair}</p>
-        <div className="w-full h-48 sm:h-64 h-80">
+        <div className="w-full h-48 sm:h-64 h-96">
           <svg
             className="w-full h-full"
             ref={svgRef}
