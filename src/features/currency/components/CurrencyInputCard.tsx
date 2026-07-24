@@ -45,7 +45,7 @@ export default function CurrencyInputCard({
           type="text"
           inputMode="decimal"
           size={10}
-          className="border border-neutral-300 text-white px-3 py-2 md:py-3 text-lg md:text-2xl lg:text-3xl focus:outline-2 focus:outline-lime-500 focus:outline-offset-2 rounded-md"
+          className={`border border-neutral-300 px-3 py-2 md:py-3 text-lg md:text-2xl lg:text-3xl focus:outline-2 focus:outline-lime-500 focus:outline-offset-2 rounded-md ${label == "receive" ? "text-lime-500" : "text-neutral-50"}`}
           value={displayValue}
           onChange={handleChange}
           onFocus={() => setIsFocused(true)}

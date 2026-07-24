@@ -4,7 +4,7 @@ import * as d3 from "d3";
 import type { TimeFrame, CurrencyTimeSeries } from "../types/types";
 import StatsSummary from "./StatsSummary";
 import TimeFrameSelector from "./TimeFrameSelector";
-import { useCurrencyConverter } from "../../../context/currencyContext";
+// import { useCurrencyConverter } from "../../../context/currencyContext";
 
 interface HistoryProps {
   timeframe: TimeFrame;
@@ -17,7 +17,7 @@ export default function CurrencyHistoryTab({
   setTimeframe,
   stats,
 }: HistoryProps) {
-  const { send, receive } = useCurrencyConverter();
+  // const { send, receive } = useCurrencyConverter();
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -161,7 +161,7 @@ export default function CurrencyHistoryTab({
 
   return (
     <section className="flex flex-col gap-6">
-      <div className="flex gap-2 justify-between items-center">
+      <div className="flex gap-2 flex-col md:flex-row justify-between items-center">
         <StatsSummary stats={stats} />
         <TimeFrameSelector value={timeframe} onChange={setTimeframe} />
       </div>

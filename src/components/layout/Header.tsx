@@ -1,9 +1,9 @@
 import logo from "../../assets/images/logo.svg";
-// import LiveMarkets from "../../features/currency/components/LiveMarkets";
+import LiveMarkets from "../../features/currency/components/LiveMarkets";
 
 export default function Header() {
   return (
-    <header className="bg-neutral-900 flex flex-col gap-2 justify-center items-center">
+    <header className="sticky top-0 z-50 bg-neutral-900 flex flex-col gap-2 justify-center items-center">
       <nav className="w-full max-w-screen-2xl flex justify-between py-3">
         <a href="/">
           <img src={logo} alt="nav logo" />
@@ -14,7 +14,7 @@ export default function Header() {
           55 CURRENCIES . EOD . ECB DATA
         </div>
       </nav>
-      {/* <LiveMarkets /> */}
+      <LiveMarkets />
     </header>
   );
 }

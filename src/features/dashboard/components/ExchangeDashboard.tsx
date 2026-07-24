@@ -65,13 +65,6 @@ export default function ExchangeDashboard() {
       </div>
       // CurrencyStatsPanel.tsx (inside, below the tabs)
       <div>
-        {/* <StatsSummary
-          open={openRate}
-          last={lastRate}
-          change={change}
-          percentChange={percentChange}
-        />
-        <TimeFrameSelector active={timeframe} onChange={setTimeframe} /> */}
         <CurrencyHistoryTab
           timeframe={timeframe}
           setTimeframe={setTimeframe}
